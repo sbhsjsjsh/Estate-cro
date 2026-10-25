@@ -24,7 +24,12 @@ export default function PropertyView() {
 
   if (dataString) {
     try {
-      const decodedStr = decodeURIComponent(escape(atob(dataString)));
+      // Convert URL-safe base64 back to standard base64
+      let base64 = dataString.replace(/-/g, '+').replace(/_/g, '/');
+      while (base64.length % 4) {
+        base64 += '=';
+      }
+      const decodedStr = decodeURIComponent(escape(atob(base64)));
       data = JSON.parse(decodedStr);
     } catch (e) {
       console.error('Failed to decode property data', e);

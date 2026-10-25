@@ -65,10 +65,15 @@ export default function PropertyPresenter() {
       return;
     }
 
-    // Encode data to base64
+    // Encode data to URL-safe base64
     const dataStr = JSON.stringify(property);
-    const encodedData = btoa(unescape(encodeURIComponent(dataStr)));
-    const link = `${window.location.origin}/p/${encodedData}`;
+    const base64 = btoa(unescape(encodeURIComponent(dataStr)));
+    const urlSafeBase64 = base64
+      .replace(/\+/g, '-')
+      .replace(/\//g, '_')
+      .replace(/=+$/, '');
+    
+    const link = `${window.location.origin}/p/${urlSafeBase64}`;
     setGeneratedLink(link);
   };
 
