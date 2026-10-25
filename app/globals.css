@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  
+  --color-brand-primary: #0F172A;
+  --color-brand-accent: #2563EB;
+}

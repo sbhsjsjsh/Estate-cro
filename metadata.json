@@ -1,0 +1,6 @@
+{
+  "name": "Estate CRO",
+  "description": "The private sales optimization toolkit for Indian real estate agents. High-converting property pages, EMI calculators, and branding.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
